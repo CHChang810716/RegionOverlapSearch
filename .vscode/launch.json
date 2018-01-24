@@ -1,0 +1,19 @@
+{
+	// 使用 IntelliSense 以得知可用的屬性。
+	// 暫留以檢視現有屬性的描述。
+	// 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "super_enhancer_cluster",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/stage/bin/super_enhancer_cluster",
+			"args": ["example/testfile.tsv","12500", "testout.tsv"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": true
+		}
+	]
+}

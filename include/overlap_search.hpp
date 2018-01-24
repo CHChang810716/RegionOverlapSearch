@@ -13,11 +13,19 @@ public:
     }
     void operator()( const std::function<void(int, const std::string&, const T& t1, const T& t2)>& writer ) {
         sort_index();
+        // for (auto&& p : index_) {
+        //     for (auto&& v : p.second) {
+        //         std::clog << p.first << '\t' << v.value << std::endl;
+        //     }
+        // }
         cluster( writer );
     }
 private:
     void sort_index() {
         for (auto&& p : index_ ) {
+            // for ( auto&& v : p.second) {
+            //     std::clog << v.value << std::endl;
+            // }
             std::sort(p.second.begin(), p.second.end());
         }
     }
@@ -26,6 +34,7 @@ private:
         for( auto&& p : index_ ) {
             std::map< typename T::Id, T* > start_pool;
             for (auto&& point : p.second ) {
+                // std::clog << point.id << ' ' << point.value << std::endl;
                 if( start_pool.size() == 0 ){ // a new cluster begin
                     cluster_id ++;
                 }
